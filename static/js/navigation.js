@@ -25,14 +25,14 @@
       url: 'contact.html',
       classes: []
     }
-  ]
+  ];
   const navigation = {
     init() {
-      this.cacheElements()
-      this.generateUI()
+      this.cacheElements();
+      this.generateUI();
     },
     cacheElements() {
-      this.$navigation = document.querySelector('nav.main-nav')
+      this.$navigation = document.querySelector('nav.main-nav');
     },
     generateUI() {
       const itemMap = navigationItems.map((item) => {
@@ -44,10 +44,11 @@
         // If url is current file set selected layout and return.
         if ((url).endsWith(item.url)) {
           return `<li class="selected ${classes}"><a href="${item.url}">${item.name}</a></li>`;
-        };
+        }
 
         // If not returned above set default layout.
-        return `<li class="${classes}"><a href="${item.url}">${item.name}</a></li>`})
+        return `<li class="${classes}"><a href="${item.url}">${item.name}</a></li>`;
+      })
         .join('');
 
       this.$navigation.innerHTML = `
@@ -56,7 +57,7 @@
             ${itemMap}
         </ul>`;
     }
-  }
+  };
   // Start initialization.
   navigation.init();
-})()
+})();
