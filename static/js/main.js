@@ -5,9 +5,16 @@
       this.generateUI();
     },
     cacheElements() {
-      // this.navigation = document.querySelector('nav.main-nav')
+      this.$toTop = document.querySelector('.btn-top');
     },
     generateUI() {
+      document.addEventListener('scroll', (e) => {
+        if (window.pageYOffset > 100) {
+          this.$toTop.classList.remove('hide');
+        } else {
+          this.$toTop.classList.add('hide');
+        }
+      });
     },
   };
   // Start initialization.

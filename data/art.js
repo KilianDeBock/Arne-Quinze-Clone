@@ -257,7 +257,7 @@ const ARTS = [
     year: '2021',
     cover: {
       image: '74f576137165a77bb849af465f0cdb7b.jpg',
-      alt: 'Lupine Aberrans sculpture standing in nature.'
+      alt: 'My Secret Garden poster.'
     },
     images: [
       'e79bd21712837f1112a9fa331175a033.jpg',
@@ -456,7 +456,7 @@ const ARTS = [
     year: '2021',
     cover: {
       image: '9bbe53cdcd0a16439f4b25e49410eb03.jpg',
-      alt: 'Lupine Aberrans sculpture standing in nature.'
+      alt: 'Mysotis Sylvatica hanging on a wall.'
     },
     images: ['addf919195bf9580969e510299c9c169.jpg'],
     highlight: true

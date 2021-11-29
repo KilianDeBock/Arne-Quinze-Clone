@@ -32,15 +32,35 @@ a:hover {
     color: #003cff;
 }
 
-.underline {
+.text_center {
+    text-align: center;
+}
+
+.text_underline {
     padding-bottom: .1rem;
     transition: all .2s ease-in-out;
     border-bottom: .12rem solid black;
 }
 
-.underline:hover {
+.text_underline:hover {
     margin: 0 -.5rem -.2rem;
     padding: 0 .5rem .2rem;
     border-bottom: .13rem solid #003cff;
+}
+
+.text_underline__hide {
+    padding-bottom: .1rem;
+    transition: all .2s ease-in-out;
+    border-bottom: .12rem solid transparent;
+}
+
+.text_underline__hide:hover {
+    margin: 0 -.5rem -.2rem;
+    padding: 0 .5rem .2rem;
+    border-bottom: .13rem solid #003cff;
+}
+
+.text_space > *:not(:last-child) {
+    margin-bottom: 2rem;
 }
 

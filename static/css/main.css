@@ -10,6 +10,10 @@ body > *:not(script) {
     margin: 0 20%;
 }
 
+.blue {
+    color: #003cff;
+}
+
 .container {
     width: 50rem;
     max-width: 100%;
@@ -23,6 +27,32 @@ body > *:not(script) {
     padding: 0 .5rem;
 }
 
+.out-of-box {
+    position: absolute;
+    left: 50%;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    width: 150rem;
+    max-width: 100%;
+    height: 45rem;
+    transform: translateX(-50%);
+}
+
+.out-of-box_wrapper {
+    height: 51rem;
+    margin: 0 auto;
+}
+
+.out-of-box > *:last-child {
+    max-width: 30rem;
+    margin: 0 2rem 0 6rem;
+}
+
+.out-of-box > *:first-child {
+    width: 58%;
+}
+
 img {
     width: 100%;
 }
@@ -31,27 +61,100 @@ img {
     margin-top: 6rem
 }
 
-.art-and-exhibitions_highlights {
+.highlights {
+    position: relative;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0;
     margin-right: -1rem;
     margin-left: -1rem;
     padding: 0;
     list-style: none;
 }
 
-.art-and-exhibitions_highlights article {
+.highlights li {
     flex-grow: 1;
     width: 14rem;
     max-width: 100%;
     margin: 1rem;
 }
 
-@media (max-width: 48rem) {
-    .art-and-exhibitions_highlights article {
+.sideways {
+    transform: rotate(-90deg);
+}
+
+.sidebar {
+    position: absolute;
+    left: -150px;
+}
+
+.btn-top {
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 4rem;
+    transition: all .2s ease-in-out;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0) 100%);
+}
+
+.hide {
+    transform: translateY(30%);
+    opacity: 0;
+}
+
+.btn-top a {
+    position: relative;
+    top: 10%
+}
+
+@media (max-width: 68rem) {
+    .sideways {
+        transform: none;
+    }
+
+    .highlights {
+        padding-top: 5rem;
+    }
+
+    .sidebar {
+        position: absolute;
+        top: 0;
+        left: unset;
+    }
+}
+
+@media (max-width: 50rem) {
+    .highlights li {
         flex-grow: 0;
+    }
+}
+
+@media (max-width: 52rem) {
+    .out-of-box_wrapper {
+        height: auto;
+    }
+
+    .out-of-box {
+        position: static;
+        display: block;
+        width: 100%;
+        height: auto;
+        transform: translateX(0);
+    }
+
+    .out-of-box > *:first-child {
+        width: 100%;
+    }
+
+    .out-of-box > *:last-child {
+        width: 100%;
+        margin: 3rem auto 0;
     }
 }
