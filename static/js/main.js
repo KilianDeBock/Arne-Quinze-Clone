@@ -13,9 +13,3 @@
   // Start initialization.
   app.init();
 })();
-
-
-// TODO: Delete after development, reload client.
-let liveJs = document.createElement('script');
-liveJs.src = '/live.js';
-document.body.appendChild(liveJs);

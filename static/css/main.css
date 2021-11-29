@@ -22,3 +22,36 @@ body > *:not(script) {
     margin: 0 auto;
     padding: 0 .5rem;
 }
+
+img {
+    width: 100%;
+}
+
+.space-above__6 {
+    margin-top: 6rem
+}
+
+.art-and-exhibitions_highlights {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    margin-right: -1rem;
+    margin-left: -1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.art-and-exhibitions_highlights article {
+    flex-grow: 1;
+    width: 14rem;
+    max-width: 100%;
+    margin: 1rem;
+}
+
+@media (max-width: 48rem) {
+    .art-and-exhibitions_highlights article {
+        flex-grow: 0;
+    }
+}

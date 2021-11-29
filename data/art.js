@@ -251,11 +251,14 @@ const ARTS = [
   {
     title: 'My Secret Garden',
     subtitle: 'overview exhibition',
-    description: null,
+    description: 'We are very delighted to invite you all to the first major overview exhibition of Arne Quinze in...',
     location: 'Beaux-Arts Museum, Mons',
     tags: ['Exhibition'],
     year: '2021',
-    cover: null,
+    cover: {
+      image: '74f576137165a77bb849af465f0cdb7b.jpg',
+      alt: 'Lupine Aberrans sculpture standing in nature.'
+    },
     images: [
       'e79bd21712837f1112a9fa331175a033.jpg',
       'd16300db0cade18adf97a45db9457a7c.jpg',
@@ -397,11 +400,14 @@ const ARTS = [
     title: 'Lupine Aberrans sculpture',
     subtitle:
       'The installation of a large Lupine sculpture in a private garden',
-    description: null,
+    description: 'Arne Quinze has created a new permanent sculpture in a private garden in Antwerp, Belgium. Arne...',
     location: 'Private garden, Wilrijk, Belgium',
     tags: ['Sculpture'],
     year: '2021',
-    cover: null,
+    cover: {
+      image: 'ff5902a5db1f56c4d2e70e58ea570a86.jpeg',
+      alt: 'Lupine Aberrans sculpture standing in nature.'
+    },
     images: [
       '64218b5f4cf1406995a65a1bbc412d9d.jpeg',
       '89b3e3b69077ff79ef5c6e95d1e508d0.jpg'
@@ -444,11 +450,14 @@ const ARTS = [
   {
     title: 'Mysotis Sylvatica',
     subtitle: 'a Wildflower Fields painting',
-    description: null,
+    description: 'For Arne Quinze, painting is an extraordinary confrontation with himself. Each work is...',
     location: 'Atelier, Sint-Martens-Latem, Belgium',
     tags: ['Painting'],
     year: '2021',
-    cover: null,
+    cover: {
+      image: '9bbe53cdcd0a16439f4b25e49410eb03.jpg',
+      alt: 'Lupine Aberrans sculpture standing in nature.'
+    },
     images: ['addf919195bf9580969e510299c9c169.jpg'],
     highlight: true
   },

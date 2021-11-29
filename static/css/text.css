@@ -1,11 +1,46 @@
+* {
+    font-weight: normal;
+}
+
 body {
     font-family: Moderat, Arial, Helvetica, sans-serif;
     /*word-break: break-word;*/
-    line-height: 1.5rem;
+    line-height: 1.8rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+    letter-spacing: .05rem;
+}
+
+h1 {
+    font-size: 1.6rem;
+}
+
+p {
+    font-size: 1rem;
+    letter-spacing: .05rem;
 }
 
 a {
+    transition: color .2s ease-in-out;
     text-decoration: none;
     color: black;
+}
+
+a:hover {
+    color: #003cff;
+}
+
+.underline {
+    padding-bottom: .1rem;
+    transition: all .2s ease-in-out;
+    border-bottom: .12rem solid black;
+}
+
+.underline:hover {
+    margin: 0 -.5rem -.2rem;
+    padding: 0 .5rem .2rem;
+    border-bottom: .13rem solid #003cff;
 }
 

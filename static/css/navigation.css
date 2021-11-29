@@ -47,12 +47,6 @@
     color: transparent;
 }
 
-@media (max-width: 18rem) {
-    body header {
-        margin: 0 .5rem;
-    }
-}
-
 @media (max-width: 40rem) {
     .main-nav {
         justify-content: center;
@@ -66,5 +60,9 @@
         display: flex;
         justify-content: center;
         text-align: center;
+    }
+
+    .main-nav ul {
+        margin-top: 2rem;
     }
 }
