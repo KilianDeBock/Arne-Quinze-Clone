@@ -28,6 +28,12 @@ a {
     color: black;
 }
 
+
+figcaption {
+    padding-bottom: .5rem;
+    color: #787878;
+}
+
 a:hover {
     color: #003cff;
 }
@@ -37,6 +43,7 @@ a:hover {
 }
 
 .text_underline {
+    line-height: 1.5rem;
     padding-bottom: .1rem;
     transition: all .2s ease-in-out;
     border-bottom: .12rem solid black;
@@ -46,6 +53,10 @@ a:hover {
     margin: 0 -.5rem -.2rem;
     padding: 0 .5rem .2rem;
     border-bottom: .13rem solid #003cff;
+}
+
+.text_underline-fix {
+    padding-bottom: 0;
 }
 
 .text_underline__hide {

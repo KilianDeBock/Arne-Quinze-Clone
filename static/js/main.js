@@ -20,3 +20,7 @@
   // Start initialization.
   app.init();
 })();
+
+function toTop() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
