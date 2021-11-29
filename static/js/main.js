@@ -8,19 +8,19 @@
       this.$toTop = document.querySelector('.btn-top');
     },
     generateUI() {
+      let lastYOffset = 0;
       document.addEventListener('scroll', (e) => {
-        if (window.pageYOffset > 100) {
-          this.$toTop.classList.remove('hide');
-        } else {
-          this.$toTop.classList.add('hide');
-        }
+        window.pageYOffset > lastYOffset ? this.$toTop.classList.remove('hide') : this.$toTop.classList.add('hide');
+        lastYOffset = window.pageYOffset;
+      });
+      this.$toTop.addEventListener('click', (e) => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
     },
   };
   // Start initialization.
   app.init();
 })();
-
-function toTop() {
-  window.scrollTo({top: 0, behavior: 'smooth'});
-}
