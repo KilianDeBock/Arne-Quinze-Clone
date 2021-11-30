@@ -1021,7 +1021,7 @@ const ARTS = [
     highlight: false
   },
   {
-    title: 'My Secret Garden — Mosaic',
+    title: 'My Secret Garden — Mosaic',
     subtitle: 'Outdoor wall art',
     description: null,
     location: 'Uccle, Belgium',
@@ -4797,7 +4797,7 @@ const ARTS = [
     highlight: false
   },
   {
-    title: 'Natural Chaos — Wall',
+    title: 'Natural Chaos — Wall',
     subtitle: 'Private metal installation',
     description: null,
     location: 'Phuket, Thailand',
@@ -8448,7 +8448,7 @@ const ARTS = [
     highlight: false
   },
   {
-    title: 'Stilthouse — Arsenaal',
+    title: 'Stilthouse — Arsenaal',
     subtitle: 'Indoor private wooden installation',
     description: null,
     location: 'Brussels, Belgium',
