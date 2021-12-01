@@ -33,6 +33,11 @@
     margin-bottom: 3rem;
 }
 
+.space__6 {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
 .space-above__1-5 {
     margin-top: 1.5rem
 }
@@ -79,6 +84,10 @@
 
 .margin_out-4 {
     margin-left: -4rem;
+}
+
+.margin_R-4 {
+    margin-right: 4rem;
 }
 
 .margin_1-5 {
@@ -133,8 +142,13 @@
     display: inline-block;
     width: 6rem;
     cursor: pointer;
+    transition: all .2s ease-in-out;
     border: none;
     background-color: unset;
+}
+
+.input-submit:hover {
+    color: #277b81;
 }
 
 /* Buttons */

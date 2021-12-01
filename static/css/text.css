@@ -54,6 +54,7 @@ a:hover svg {
     margin: 2px;
     transition: border .1s ease-in-out;
     border: 0 solid #003cff;
+    background-color: #003cff;
 }
 
 .list-link a:focus img,

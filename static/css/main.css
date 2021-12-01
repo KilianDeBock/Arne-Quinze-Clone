@@ -31,37 +31,20 @@ img {
     margin: 0 auto;
 }
 
-/* box breaker, gets out of the box with a max 150rem width */
-.box-breaker {
+.double-box {
     display: flex;
-    overflow: hidden;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 150rem;
     max-width: 100%;
-    height: 45rem;
     margin: 0 auto;
 }
 
-.box-breaker:not(.box-breaker__alone, .box-breaker_reverse) > *:first-child {
-    width: 58%;
-}
-
-.box-breaker:not(.box-breaker__alone, .box-breaker_reverse) > *:last-child {
-    max-width: 30rem;
-    margin: 0 2rem 0 6rem;
-}
-
-.box-breaker_reverse:not(.box-breaker__alone) > *:first-child {
-    max-width: 30rem;
-    margin: 0 2rem 0 6rem;
-}
-
-.box-breaker_reverse:not(.box-breaker__alone) > *:last-child {
-    width: 58%;
-}
-
-.box-breaker__alone > *:first-child {
-    width: 90%;
+.double-box > * {
+    width: 30rem;
+    max-width: 100%;
+    padding: 2.5rem;
 }
 
 /* Flex containers */
@@ -161,34 +144,5 @@ img {
 @media (min-width: 40rem) {
     .flex_middle-spacing > * {
         width: auto;
-    }
-}
-
-@media (max-width: 52rem) {
-    .box-breaker {
-        position: static;
-        display: block;
-        width: 100%;
-        height: auto;
-        transform: translateX(0);
-    }
-
-    .box-breaker:not(.box-breaker__alone, .box-breaker_reverse) > *:first-child {
-        width: 100%;
-    }
-
-    .box-breaker:not(.box-breaker__alone, .box-breaker_reverse) > *:last-child {
-        width: 100%;
-        margin: 3rem auto 0;
-    }
-
-    .box-breaker_reverse:not(.box-breaker__alone) > *:first-child {
-        width: 100%;
-        margin: 3rem auto 0;
-    }
-
-    .box-breaker_reverse:not(.box-breaker__alone) > *:last-child {
-        width: 100%;
-        margin-top: 3rem;
     }
 }
