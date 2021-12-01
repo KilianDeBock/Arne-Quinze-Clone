@@ -11,11 +11,11 @@
     },
     generateArtHighlights() {
       const artItems = ARTS.filter((item) => item.highlight);
-      panelsBuilder(this.$artAndExhibitions, artItems, 'art-and-exhibitions');
+      panelsBuilder(this.$artAndExhibitions, artItems, 'art-and-exhibitions', 'Art & Exhibitions', 'art-and-exhibitions/detail/index.html');
     },
     generateAtelierHighlights() {
       const atelierItems = ATELIERS.filter((item) => item.highlight);
-      panelsBuilder(this.$atelierStudio, atelierItems, 'homepage');
+      panelsBuilder(this.$atelierStudio, atelierItems, 'homepage', 'Atelier ‐ Studio', 'art-and-exhibitions/detail/index.html');
     }
   };
   // Start initialization.

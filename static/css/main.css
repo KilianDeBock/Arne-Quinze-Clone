@@ -47,6 +47,21 @@ img {
     margin: 0 2rem 0 6rem;
 }
 
+/* box breaker, gets out of the box with a max 150rem width */
+.box-breaker__alone {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    width: 200rem;
+    max-width: 100%;
+    height: 40rem;
+    margin: 0 auto;
+}
+
+.box-breaker__alone > * {
+    width: 80%;
+}
+
 /* Flex containers */
 
 .flex {
@@ -62,13 +77,6 @@ img {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.flex_middle img {
-    flex-grow: 1;
-    width: 4rem;
-    height: 4rem;
-    margin: 2px;
 }
 
 .flex_middle-spacing {
@@ -93,8 +101,13 @@ img {
 
 .flex_out {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.flex_out > * {
+    margin: 1rem;
 }
 
 /* Layout keys */
@@ -208,6 +221,9 @@ img {
     list-style: none;
 }
 
+.flex_middle img {
+}
+
 /* Media queries */
 @media (max-width: 68rem) {
     .sideways {
@@ -225,9 +241,21 @@ img {
     }
 }
 
+@media (max-width: 15rem) {
+    .flex_out {
+        justify-content: center;
+    }
+}
+
 @media (max-width: 50rem) {
     .flex_middle-spacing > * {
         flex-grow: 0;
+    }
+}
+
+@media (max-width: 48.5rem) {
+    .flex_middle {
+        flex-grow: 1;
     }
 }
 

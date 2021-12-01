@@ -10,8 +10,8 @@
     generateUI() {
       let lastYOffset = 0;
       document.addEventListener('scroll', () => {
-        window.pageYOffset > lastYOffset ? this.$toTop.classList.remove('hide') : this.$toTop.classList.add('hide');
-        lastYOffset = window.pageYOffset;
+        window.scrollY > lastYOffset ? this.$toTop.classList.remove('hide') : this.$toTop.classList.add('hide');
+        lastYOffset = window.scrollY;
       });
       this.$toTop.addEventListener('click', () => {
         window.scrollTo({
@@ -31,7 +31,7 @@ function tagsBuilder(item) {
   return `${tags} — ${item.location}`;
 }
 
-function panelsBuilder(target, array, imageLocation) {
+function panelsBuilder(target, array, imageLocation, detailsString, detailsPage) {
   target.innerHTML = array.map((item) => {
     const tags = item.location !== null && item.tags !== [] && item.tags !== undefined && item.location !== undefined ? `<p class="text_subtitle">${tagsBuilder(item)}</p>` : '';
     return `
@@ -45,7 +45,7 @@ function panelsBuilder(target, array, imageLocation) {
           </li>`;
   }).join('') + `
         <div class="text_center sideways sidebar">
-          <h2>Art & Exhibitions</h2>
-          <a href="art-and-exhibitions/detail/index.html" class="blue text_underline__hide">View all</a>
+          <h2>${detailsString}</h2>
+          <a href="${detailsPage}" class="blue text_underline__hide">View all</a>
         </div>`;
 }
