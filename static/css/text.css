@@ -14,8 +14,12 @@ h1 {
     letter-spacing: .05rem;
 }
 
-h1 {
+h2 {
     font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.4rem;
 }
 
 p {
@@ -52,6 +56,7 @@ a:hover svg {
     border: 0 solid #003cff;
 }
 
+.list-link a:focus img,
 .list-link li:hover {
     border: 2px solid #003cff;
 }
@@ -74,14 +79,29 @@ a:hover svg {
     text-align: center;
 }
 
+.text_right {
+    text-align: right;
+}
+
 .text_big {
     font-size: 2rem;
     font-weight: normal;
+    line-height: 2.2rem;
 }
 
 .text_big > * {
     font-size: 2rem;
     font-weight: normal;
+}
+
+.text_medium {
+    font-size: 1.3rem;
+    font-weight: normal;
+    line-height: 1.8rem;
+}
+
+.text_small {
+    font-weight: 300;
 }
 
 .text_tiny {
@@ -100,6 +120,11 @@ a:hover svg {
 
 .text_bold > * {
     font-weight: bold;
+}
+
+.text_section:not(:last-child) {
+    display: inline-block;
+    margin-bottom: 1rem;
 }
 
 .text_underline {

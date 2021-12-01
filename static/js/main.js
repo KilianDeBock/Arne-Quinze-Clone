@@ -74,6 +74,6 @@ function panelsBuilder(target, array, imageLocation, detailsString, detailsPage)
   }).join('') + `
         <div class="text_center sideways sidebar">
           <h2>${detailsString}</h2>
-          <a href="${detailsPage}" class="blue text_underline__hide">View all</a>
+          <a href="${detailsPage}" class="color_blue text_underline__hide">View all</a>
         </div>`;
 }
