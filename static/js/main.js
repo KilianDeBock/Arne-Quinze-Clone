@@ -3,9 +3,12 @@
     init() {
       this.cacheElements();
       this.generateUI();
+      this.generateFooter();
     },
     cacheElements() {
       this.$toTop = document.querySelector('.btn-top');
+      this.$footerSocials = document.querySelector('.socials-wrapper');
+      this.$footerInstagrams = document.querySelector('.footer-instagram');
     },
     generateUI() {
       let lastYOffset = 0;
@@ -19,6 +22,31 @@
           behavior: 'smooth'
         });
       });
+    },
+    generateFooter() {
+      const socialItems = footerSocials.map((item) => {
+        return `
+          <li>
+            <a class="text_underline__hide text_underline-fix">
+              ${item.svg}
+              <p>${item.name}</p>
+            </a>
+          </li>`;
+      }).join('');
+      this.$footerSocials.innerHTML = `
+        <ul class="flex flex_middle-spacing no-list container">
+            ${socialItems}
+        </ul>`;
+
+
+      this.$footerInstagrams.innerHTML = footerInstagrams.map((item) => {
+        return `
+          <li>
+            <a href="${item.url}">
+              <img alt="Instagram post." src="${item.image}">
+            </a>
+          </li>`;
+      }).join('');
     }
   };
   // Start initialization.

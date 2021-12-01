@@ -47,6 +47,7 @@
 
 .width_40 {
     width: 40rem;
+    max-width: 100%;
 }
 
 
@@ -70,6 +71,7 @@
 /* Input */
 .input-big {
     width: 25rem;
+    max-width: 100%;
     height: 3rem;
     padding: 1rem 0 1rem .5rem;
     border: 1px solid rgba(90, 90, 90, 0.50);
