@@ -38,28 +38,17 @@ img {
     margin: 0 auto;
 }
 
-.box-breaker > *:first-child {
+.box-breaker:not(.box-breaker__alone) > *:first-child {
     width: 58%;
 }
 
-.box-breaker > *:last-child {
+.box-breaker:not(.box-breaker__alone) > *:last-child {
     max-width: 30rem;
     margin: 0 2rem 0 6rem;
 }
 
-/* box breaker, gets out of the box with a max 150rem width */
-.box-breaker__alone {
-    display: flex;
-    overflow: hidden;
-    align-items: center;
-    width: 200rem;
-    max-width: 100%;
-    height: 40rem;
-    margin: 0 auto;
-}
-
-.box-breaker__alone > * {
-    width: 80%;
+.box-breaker__alone > *:first-child {
+    width: 90%;
 }
 
 /* Flex containers */
@@ -110,63 +99,7 @@ img {
     margin: 1rem;
 }
 
-/* Layout keys */
-
-.blue {
-    color: #003cff;
-}
-
-.hide {
-    transform: translateY(100%);
-    opacity: 0;
-}
-
-.sideways {
-    transform: rotate(-90deg);
-}
-
-.sidebar {
-    position: absolute;
-    left: -150px;
-}
-
-.space__3 {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-}
-
-.space-above__1-5 {
-    margin-top: 1.5rem
-}
-
-.space-above__3 {
-    margin-top: 3rem
-}
-
-.space-above__4-5 {
-    margin-top: 4.5rem
-}
-
-.space-above__6 {
-    margin-top: 6rem
-}
-
-/* Styles sets */
-
-.panels {
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.panels li {
-    flex-grow: 1;
-    width: 14rem;
-    max-width: 100%;
-    margin: 1rem;
-}
+/* Footer styles */
 
 .socials-wrapper {
     border-top: 1px solid #e6e6e6;
@@ -179,49 +112,6 @@ img {
 .foot .container {
     padding-top: 3rem;
     padding-bottom: 3rem;
-}
-
-.input-big {
-    width: 25rem;
-    height: 3rem;
-    padding: 1rem 0 1rem .5rem;
-    border: 1px solid rgba(90, 90, 90, 0.50);
-    background-color: transparent;
-}
-
-.input-big:focus,
-.input-big:hover {
-    padding-left: calc(.5rem - 1px);
-    border: 2px solid #2fbfd3;
-    outline: none;
-}
-
-.btn-top {
-    position: fixed;
-    z-index: 100;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 4rem;
-    cursor: pointer;
-    transition: all .2s ease-in-out;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0) 100%);
-}
-
-.btn-top a {
-    position: relative;
-    top: 10%;
-}
-
-.no-list {
-    padding: 0;
-    list-style: none;
-}
-
-.flex_middle img {
 }
 
 /* Media queries */

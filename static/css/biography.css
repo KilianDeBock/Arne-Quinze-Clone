@@ -1,0 +1,10 @@
+.img_bio-top {
+    position: relative;
+    left: 0;
+    width: 80%;
+    height: 50rem;
+    background-image: url("../img/biography/15c5f8b53ebbbf9845e4844824b67818.jpg");
+    background-repeat: no-repeat;
+    background-position: 65% 10%;
+    background-size: cover;
+}
