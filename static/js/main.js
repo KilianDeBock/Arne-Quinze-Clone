@@ -6,11 +6,14 @@
       this.generateFooter();
     },
     cacheElements() {
+      this.$belgiumTimes = document.querySelectorAll('.belgium-time');
       this.$toTop = document.querySelector('.btn-top');
       this.$footerSocials = document.querySelector('.socials-wrapper');
       this.$footerInstagrams = document.querySelector('.footer-instagram');
     },
     generateUI() {
+      const date = new Date();
+      this.$belgiumTimes.forEach((item) => item.innerHTML = `${date.getHours()}:${date.getMinutes()}`);
       let lastYOffset = 0;
       document.addEventListener('scroll', () => {
         window.scrollY > lastYOffset ? this.$toTop.classList.remove('hide') : this.$toTop.classList.add('hide');

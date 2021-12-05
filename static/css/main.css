@@ -1,10 +1,22 @@
 @import "../fonts/moderat/Moderat.css";
 
+:root {
+    --gray-200: #e6e6e6;
+    --gray-500: #555;
+    --gray-500_5: rgba(90, 90, 90, 0.50);
+    --gray-700: #818181;
+    --blue-400: #2fbfd3;
+    --blue-600: #277b81;
+    --blue-800: #003cff;
+    --blue-900: #0030cc;
+}
+
 /* Default values */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    word-wrap: break-word;
 }
 
 img {
@@ -95,14 +107,31 @@ img {
     margin: 1rem;
 }
 
+.flex_out > *:first-child {
+    margin-left: 0;
+}
+
+.flex_out > *:last-child {
+    margin-right: 0;
+}
+
+.flex-top {
+    align-items: flex-start;
+}
+
+.flex-grow,
+.flex-grow > * {
+    flex-grow: 1
+}
+
 /* Footer styles */
 
 .socials-wrapper {
-    border-top: 1px solid #e6e6e6;
+    border-top: 1px solid var(--gray-200);
 }
 
 .foot {
-    background-color: #e6e6e6
+    background-color: var(--gray-200)
 }
 
 .foot .container {
