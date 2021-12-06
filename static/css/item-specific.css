@@ -59,6 +59,30 @@
     max-width: 100%;
 }
 
+.anx_item {
+    line-height: 1.5rem;
+    margin: .3rem 1rem 0;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    border-bottom: .12rem solid transparent;
+}
+
+.anx_item:hover {
+    margin: 0 .5rem -.21rem;
+    padding: .3rem .5rem .2rem;
+    border-bottom: .13rem solid #003cff;
+}
+
+.anx_item_all {
+    border-bottom: .12rem solid black;
+}
+
+
+.anx_item_selected {
+    color: #003cff;
+    border-bottom: .13rem solid #003cff;
+}
+
 @media (max-width: 49rem) {
     .contact-form {
         justify-content: space-around;

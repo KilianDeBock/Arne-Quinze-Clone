@@ -59,6 +59,9 @@
 
 function tagsBuilder(object) {
   const tags = object.tags.join(' / ');
+  if (object.location === null) {
+    return `${tags}`;
+  }
   return `${tags} — ${object.location}`;
 }
 
