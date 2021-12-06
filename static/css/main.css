@@ -32,6 +32,11 @@ img {
     padding: 0 1rem;
 }
 
+/* Longer middle container with max width */
+.container_longer {
+    width: 80rem;
+}
+
 /* 100% width boxed container with inner padding. */
 .box {
     width: 100%;

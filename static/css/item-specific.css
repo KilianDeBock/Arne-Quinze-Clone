@@ -36,6 +36,29 @@
     background-color: var(--blue-900);
 }
 
+.img_anx {
+    width: auto;
+    height: 6rem;
+}
+
+.anx_content {
+    width: 30%;
+    padding-right: 5rem;
+}
+
+.anx_images {
+    width: 70%;
+}
+
+.anx_images li {
+    margin: 0 1rem;
+}
+
+.anx_content,
+.anx_images {
+    max-width: 100%;
+}
+
 @media (max-width: 49rem) {
     .contact-form {
         justify-content: space-around;
@@ -55,5 +78,17 @@
 @media (max-width: 35rem) {
     .contact-form > *:nth-child(2) {
         order: unset
+    }
+}
+
+@media (max-width: 69rem) {
+    .anx_content {
+        margin: 0 0 2rem 1rem;
+        text-align: left;
+    }
+
+    .anx_content,
+    .anx_images {
+        width: 100%;
     }
 }

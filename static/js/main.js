@@ -57,9 +57,9 @@
 })();
 
 
-function tagsBuilder(item) {
-  const tags = item.tags.join(' / ');
-  return `${tags} — ${item.location}`;
+function tagsBuilder(object) {
+  const tags = object.tags.join(' / ');
+  return `${tags} — ${object.location}`;
 }
 
 function panelsBuilder(target, array, imageLocation, detailsString, detailsPage) {
