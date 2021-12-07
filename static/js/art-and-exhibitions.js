@@ -61,17 +61,21 @@
         const yearArtsArray = arts.filter(art => art.year === year);
         const yearArtsHTML = yearArtsArray.map(art => {
           const artImages = art.images.map(image => {
-            return `<li><img class="img_ane" loading="lazy" src="static/img/art-and-exhibitions/${image}" alt="${art.title}"></li>`;
+            return `<li>
+                      <a href="art-and-exhibitions/detail/index.html">
+                        <img class="img_ane" loading="lazy" src="static/img/art-and-exhibitions/${image}" alt="${art.title}">
+                      </a>
+                    </li>`;
           }).join('');
           return `<li class="space-above__6 flex">
                     <div class="anx_content text_right">
-                        <h3>${art.title}</h3>
-                        <p>${art.subtitle}</p>
-                        <p>${tagsBuilder(art)}</p>
+                      <h3><a class="text_underline__hide" href="art-and-exhibitions/detail/index.html">${art.title}</a></h3>
+                      <p>${art.subtitle}</p>
+                      <p>${tagsBuilder(art)}</p>
                     </div>
-                    <ul class="no-list flex anx_images">
-                      ${artImages}
-                    </ul>
+                      <ul class="no-list flex anx_images">
+                        ${artImages}
+                      </ul>
                   </li>`;
         }).join('');
         return `<h2 class="space-above__12">${year}</h2><ul class="no-list">${yearArtsHTML}</ul>`;
@@ -194,7 +198,6 @@
       tagsHtml: null,
       yearsHtml: null
     }
-
   };
   // Start initialization.
   artAndExhibitions.init();

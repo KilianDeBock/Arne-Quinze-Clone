@@ -107,6 +107,7 @@ a:hover svg {
 
 .text_tiny {
     font-size: .55rem;
+    line-height: 1;
     letter-spacing: .08rem;
 }
 

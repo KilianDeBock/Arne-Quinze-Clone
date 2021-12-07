@@ -4,12 +4,14 @@
       this.cacheElements();
       this.generateUI();
       this.generateFooter();
+      this.generateRelated();
     },
     cacheElements() {
       this.$belgiumTimes = document.querySelectorAll('.belgium-time');
       this.$toTop = document.querySelector('.btn-top');
       this.$footerSocials = document.querySelector('.socials-wrapper');
       this.$footerInstagrams = document.querySelector('.footer-instagram');
+      this.$related = document.querySelector('.related');
     },
     generateUI() {
       const date = new Date();
@@ -50,6 +52,32 @@
             </a>
           </li>`;
       }).join('');
+    },
+    generateRelated() {
+      if (this.$related) {
+        const randomARTS = ARTS.sort(() => 0.3 - Math.random());
+        const artItems = randomARTS.slice(0, 3);
+        console.log(artItems);
+        const descriptions = [
+          'Arne Quinze does not portray a flower but the strength and fragility of his entire garden. Each...',
+          'This natural garden welcomes a new creature, with the artist\'s approving gaze. This sculpture...',
+          'Sky & Yellows, oil paint on canvas with solid oak frame Many wildflowers have stripes, dots, and...'
+        ];
+
+        this.$related.innerHTML = artItems.map((item, i) => {
+          const tags = item.location !== null && item.tags !== [] && item.tags !== undefined && item.location !== undefined ? `<p class="text_subtitle">${tagsBuilder(item)}</p>` : '';
+          const description = item.description === null ? '' : item.description;
+          return `
+          <li>
+            <a href="art-and-exhibitions/detail/index.html">
+              <img src="static/img/art-and-exhibitions/${item.images[0]}" alt="${item.title}" loading="lazy">
+            </a>${tags}
+            <h3>${item.title}</h3>
+            <p>${descriptions[i]}</p>
+            <a href="art-and-exhibitions/detail/index.html" class="text_underline">Learn more</a>
+          </li>`;
+        }).join('');
+      }
     }
   };
   // Start initialization.
@@ -65,7 +93,12 @@ function tagsBuilder(object) {
   return `${tags} — ${object.location}`;
 }
 
-function panelsBuilder(target, array, imageLocation, detailsString, detailsPage) {
+function panelsBuilder(target, array, imageLocation, detailsString, detailsPage, disableSideBar = false) {
+  const sidebar = disableSideBar ? '' : `
+        <div class="text_center sideways sidebar">
+          <h2>${detailsString}</h2>
+          <a href="${detailsPage}" class="color_blue text_underline__hide">View all</a>
+        </div>`;
   target.innerHTML = array.map((item) => {
     const tags = item.location !== null && item.tags !== [] && item.tags !== undefined && item.location !== undefined ? `<p class="text_subtitle">${tagsBuilder(item)}</p>` : '';
     return `
@@ -77,9 +110,5 @@ function panelsBuilder(target, array, imageLocation, detailsString, detailsPage)
             <p>${item.description}</p>
             <a href="art-and-exhibitions/detail/index.html" class="text_underline">Learn more</a>
           </li>`;
-  }).join('') + `
-        <div class="text_center sideways sidebar">
-          <h2>${detailsString}</h2>
-          <a href="${detailsPage}" class="color_blue text_underline__hide">View all</a>
-        </div>`;
+  }).join('') + sidebar
 }

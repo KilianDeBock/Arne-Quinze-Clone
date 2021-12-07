@@ -112,6 +112,10 @@
     height: 25rem;
 }
 
+.height_90 {
+    height: 90rem;
+}
+
 .margin_1-5 {
     margin-top: 1.5rem;
 }
@@ -175,6 +179,11 @@
     outline: none;
 }
 
+.input-big:focus .input-submit,
+.input-big-form:hover .input-submit {
+    right: 2px;
+}
+
 .input-submit {
     font-size: 1.3rem;
     position: absolute;
@@ -190,6 +199,7 @@
 }
 
 .input-submit:hover {
+    right: 2px;
     color: var(--blue-600);
 }
 
