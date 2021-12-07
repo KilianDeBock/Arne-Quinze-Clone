@@ -15,7 +15,7 @@
     },
     generateAtelierHighlights() {
       const atelierItems = ATELIERS.filter((item) => item.highlight);
-      panelsBuilder(this.$atelierStudio, atelierItems, 'homepage', 'Atelier ‐ Studio', 'art-and-exhibitions/detail/index.html');
+      panelsBuilder(this.$atelierStudio, atelierItems, 'atelier', 'Atelier ‐ Studio', 'art-and-exhibitions/detail/index.html');
     }
   };
   // Start initialization.

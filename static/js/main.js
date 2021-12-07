@@ -93,7 +93,7 @@ function tagsBuilder(object) {
   return `${tags} — ${object.location}`;
 }
 
-function panelsBuilder(target, array, imageLocation, detailsString, detailsPage, disableSideBar = false) {
+function panelsBuilder(target, array, imageLocation, detailsString, detailsPage, disableSideBar = false, subtitleShouldBe = false, url = 'art-and-exhibitions/detail/index.html') {
   const sidebar = disableSideBar ? '' : `
         <div class="text_center sideways sidebar">
           <h2>${detailsString}</h2>
@@ -101,14 +101,16 @@ function panelsBuilder(target, array, imageLocation, detailsString, detailsPage,
         </div>`;
   target.innerHTML = array.map((item) => {
     const tags = item.location !== null && item.tags !== [] && item.tags !== undefined && item.location !== undefined ? `<p class="text_subtitle">${tagsBuilder(item)}</p>` : '';
+    const sub = `<p class="text_subtitle">${item.subtitle}</p>`;
+    const subtitle = subtitleShouldBe ? sub : tags;
     return `
           <li>
-            <a href="art-and-exhibitions/detail/index.html">
+            <a href="${url}">
               <img src="static/img/${imageLocation}/${item.cover.image}" alt="${item.cover.alt}" loading="lazy">
-            </a>${tags}
+            </a>${subtitle}
             <h3>${item.title}</h3>
             <p>${item.description}</p>
             <a href="art-and-exhibitions/detail/index.html" class="text_underline">Learn more</a>
           </li>`;
-  }).join('') + sidebar
+  }).join('') + sidebar;
 }
