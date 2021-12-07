@@ -4676,7 +4676,7 @@ const ARTS = [
     subtitle: 'Natural Chaos',
     description: null,
     location: null,
-    tags: ['Atelier, Sint-Martens-Latem, Belgium'],
+    tags: [],
     year: '2015',
     cover: null,
     images: [
@@ -6495,7 +6495,7 @@ const ARTS = [
     subtitle: 'Exhibition',
     description: null,
     location: null,
-    tags: ['Kunsthal Rotterdam, the Netherlands'],
+    tags: [],
     year: '2012',
     cover: null,
     images: [

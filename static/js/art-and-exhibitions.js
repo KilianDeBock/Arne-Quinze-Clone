@@ -22,7 +22,7 @@
         return `<li data-tag="${tag}" class="anx_tag-item anx_item">${tag}</li>`;
       }).join('');
       this.filterData.tagsHtml = `<ol class="no-list flex width_45 margin_out-1">
-                      <li class="anx_item anx_item_all">Show all</li>
+                      <li class="anx_item anx_item_all anx_item_all_tags">Show all</li>
                       ${tagsMap}
                     </ol>`;
 
@@ -35,7 +35,7 @@
         return `<li data-year="${year}" class="anx_year-item anx_item">${year}</li>`;
       }).join('');
       this.filterData.yearsHtml = `<ol class="no-list flex width_45 space-above__1-5 margin_out-1">
-                       <li class="anx_item anx_item_all">Show all</li>
+                       <li class="anx_item anx_item_all anx_item_all_years">Show all</li>
                        ${yearsMap}
                      </ol>`;
 
@@ -87,50 +87,102 @@
         item.dataset.listener = 'true';
         // Add event listener
         item.addEventListener('click', (ev) => {
+          console.log('event');
+          // Set selected target.
           let selected = ev.target;
+
+          // Check if item is tag
           if (ev.target.classList.contains('anx_tag-item')) {
+            // Check if we need to create new filtered data
             if (ev.target.dataset.tag !== this.filterData.currentTag) {
+              // Set to default data
               this.filterData.currentFilter = [...ARTS];
+              // Check if an other filter is set.
               if (this.filterData.currentYear !== null) {
+                // Reset old filter:
                 this.filterYearsLoader(ev, this.filterData.currentYear);
               }
             }
+            // Generate the set tags
             this.generateFilterTags();
-            selected = document.querySelector(`[data-tag='${ev.target.dataset.tag}']`);
+            // Reload tags generation
             this.filterTagsLoader(ev);
+            // set the latest tag to memory
             this.filterData.currentTag = ev.target.dataset.tag;
+            // Cache new selected element
+            selected = document.querySelector(`[data-tag='${ev.target.dataset.tag}']`);
+
+            //  Check if item is year
           } else if (ev.target.classList.contains('anx_year-item')) {
+            // Check if we need to create new filtered data
             if (ev.target.dataset.year !== this.filterData.currentYear) {
+              // Set to default data
               this.filterData.currentFilter = [...ARTS];
+              // Check if an other filter is set.
               if (this.filterData.currentTag !== null) {
+                // Reset old filter:
                 this.filterTagsLoader(ev, this.filterData.currentTag);
               }
             }
+            // Generate the set years
             this.generateFilterYears();
-            selected = document.querySelector(`[data-year='${ev.target.dataset.year}']`);
+            // Reload years generation
             this.filterYearsLoader(ev);
+            // set the latest year to memory
             this.filterData.currentYear = ev.target.dataset.year;
+            // Cache new selected element
+            selected = document.querySelector(`[data-year='${ev.target.dataset.year}']`);
+
+            //  Other item (all items)
           } else {
-            this.generateFilterYears();
-            this.generateFilterTags();
+            // reset filter to default.
             this.filterData.currentFilter = [...ARTS];
-            this.filterData.currentYear = null;
-            this.filterData.currentTag = null;
+
+            // Check if item is all tags:
+            if (ev.target.classList.contains('anx_item_all_tags')) {
+              // regenerate tags
+              this.generateFilterTags();
+              // reset data saved to memory
+              this.filterData.currentTag = null;
+              // Check if an other filter is set.
+              if (this.filterData.currentYear !== null) {
+                // Reset old filter
+                this.filterYearsLoader(ev, this.filterData.currentYear);
+              }
+            }
+
+            // Check if item is all years:
+            if (ev.target.classList.contains('anx_item_all_years')) {
+              // regenerate tags
+              this.generateFilterYears();
+              // reset data saved to memory
+              this.filterData.currentYear = null;
+              // Check if an other filter is set.
+              if (this.filterData.currentTag !== null) {
+                // Reset old filter
+                this.filterTagsLoader(ev, this.filterData.currentTag);
+              }
+            }
           }
+          // Generate the now filtered arts.
           this.generateArts(this.filterData.currentFilter);
-          // console.log(this.filterData.currentYear);
+          // Add selected tag to the target.
           selected.classList.add('anx_item_selected');
         });
       }
     },
     filterTagsLoader(ev, tag = ev.target.dataset.tag) {
+      // if tag is unset, stop!
       if (tag === null) return;
+      // Filter data
       this.filterData.currentFilter = this.filterData.currentFilter.filter((art) => {
         return (art.tags.toString()).includes(tag);
       });
     },
     filterYearsLoader(ev, year = ev.target.dataset.year) {
+      // if year is unset, stop!
       if (year === null) return;
+      // Filter data
       this.filterData.currentFilter = this.filterData.currentFilter.filter((art) => {
         return art.year === year;
       });
