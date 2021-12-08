@@ -93,18 +93,19 @@ function tagsBuilder(object) {
   return `${tags} — ${object.location}`;
 }
 
-function panelsBuilder(target, array, imageLocation, detailsString, detailsPage, disableSideBar = false, subtitleShouldBe = false, url = 'art-and-exhibitions/detail/index.html') {
+function panelsBuilder(target, array, imageLocation, detailsString, detailsPage, disableSideBar = false, subtitleShouldBe = false, url = 'art-and-exhibitions/detail/index.html', topSpacing = false) {
   const sidebar = disableSideBar ? '' : `
         <div class="text_center sideways sidebar">
           <h2>${detailsString}</h2>
           <a href="${detailsPage}" class="color_blue text_underline__hide">View all</a>
         </div>`;
+  const spacing = topSpacing ? ' class="space-above__6"' : '';
   target.innerHTML = array.map((item) => {
     const tags = item.location !== null && item.tags !== [] && item.tags !== undefined && item.location !== undefined ? `<p class="text_subtitle">${tagsBuilder(item)}</p>` : '';
     const sub = `<p class="text_subtitle">${item.subtitle}</p>`;
     const subtitle = subtitleShouldBe ? sub : tags;
     return `
-          <li>
+          <li${spacing}>
             <a href="${url}">
               <img src="static/img/${imageLocation}/${item.cover.image}" alt="${item.cover.alt}" loading="lazy">
             </a>${subtitle}
