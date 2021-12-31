@@ -53,7 +53,6 @@
       this.$anxFilterYears.forEach(item => this.filterListener(item));
     },
     generateArts(arts = ARTS) {
-      console.log('generated');
       // Loop through the years, import it into a set so only unique stay, and then convert it back to an array.
       const years = [...(new Set(arts.map(art => art.year)))];
       // const years = [1, 2, 3];
@@ -91,7 +90,6 @@
         item.dataset.listener = 'true';
         // Add event listener
         item.addEventListener('click', (ev) => {
-          console.log('event');
           // Set selected target.
           let selected = ev.target;
 
@@ -194,9 +192,7 @@
     filterData: {
       currentFilter: [...ARTS],
       currentYear: null,
-      currentTag: null,
-      tagsHtml: null,
-      yearsHtml: null
+      currentTag: null
     }
   };
   // Start initialization.

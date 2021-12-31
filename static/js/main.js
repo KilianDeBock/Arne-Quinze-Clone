@@ -57,7 +57,6 @@
       if (this.$related) {
         const randomARTS = ARTS.sort(() => 0.3 - Math.random());
         const artItems = randomARTS.slice(0, 3);
-        console.log(artItems);
         const descriptions = [
           'Arne Quinze does not portray a flower but the strength and fragility of his entire garden. Each...',
           'This natural garden welcomes a new creature, with the artist\'s approving gaze. This sculpture...',
